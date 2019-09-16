@@ -26,11 +26,35 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenArrayHasnt() {
+    public void whenArrayHasnt9() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {5, 10, 6, 7};
         int value = 9;
         int result = find.indexOf(input, value);
+        int expect = -1;
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenArrayHas2Then3() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[]{5, 2, 10, 2, 4};
+        int value = 2;
+        int start = 2;
+        int finish = 4;
+        int result = find.indexOf(input, value, start, finish);
+        int expect = 3;
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenArrayHasnt8() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[]{5, 6, 2, 7, 10, 7, 2, 4};
+        int value = 8;
+        int start = 0;
+        int finish = 7;
+        int result = find.indexOf(input, value, start, finish);
         int expect = -1;
         assertThat(result, is(expect));
     }

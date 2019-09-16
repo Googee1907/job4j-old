@@ -27,7 +27,7 @@ public class FindLoop {
      * @param finish - индекс, которым заканчивается поиск
      * @return rst - индекс элемента массива, если такой элемент есть или -1
      */
-    public int indexOf(int[] data, int el, int start, int finish) {
+    public static int indexOf(int[] data, int el, int start, int finish) {
         int rst = -1;
         for (int index = start; index != finish; index++) {
             if (data[index] == el) {

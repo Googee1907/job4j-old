@@ -29,7 +29,7 @@ public class FindLoopTest {
     public void whenArrayHasnt() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {5, 10, 6, 7};
-        int value = 3;
+        int value = 9;
         int result = find.indexOf(input, value);
         int expect = -1;
         assertThat(result, is(expect));

@@ -4,20 +4,21 @@ package ru.job4j.array;
  * Проверка соответствия начала слов
  */
 public class ArrayChar {
+    /**
+     *
+     * @param word - эталонное слово
+     * @param pref - сверяемое начало слова
+     * @return result: true - если слова совпадают,
+     *                 false - если слова не совпадают
+     */
     public static boolean startsWith(char[] word, char[] pref) {
         boolean result = false;
-        String w = "";
-        String c = "";
-        int i;
 
-        for (i = 0; i < pref.length; i++) {
-            w += word[i];
-        }
-        for (i = 0; i < pref.length; i++) {
-            c += pref[i];
-        }
-        boolean eq = w.equals(c);
-        if (eq == true) {
+        for (int i = 0; i < pref.length; i++) {
+            if (word[i] != pref[i]) {
+                result = false;
+            break;
+            }
             result = true;
         }
         return result;

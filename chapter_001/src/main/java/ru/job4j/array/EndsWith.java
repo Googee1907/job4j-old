@@ -5,29 +5,20 @@ package ru.job4j.array;
  */
 public class EndsWith {
     /**
-     *
-     * @param word - проверяемое слово
-     * @param post - предлагаемое окончание слова
-     * w - переменная для заполнения окончанием слова
-     * p - переменная для заполнения предлагаемым окончанием
-     * eq - переменная, сравнивающая окончания
-     * @return result:  true - если окончание совпадает,
-     *      *           false - если не совпадает
+     * Метод проверки окончания слов
+     * @param word - эталонное слово
+     * @param post - сверяемое окончание слова
+     * @return result: true - если слова совпадают,
+     *                 false - если слова не совпадают
      */
     public static boolean endsWith(char[] word, char[] post) {
         boolean result = false;
-        String w = "";
-        String p = "";
-        int i;
 
-        for (i = (word.length - post.length); i < word.length; i++) {
-            w += word[i];
-        }
-        for (i = 0; i < post.length; i++) {
-            p += post[i];
-        }
-        boolean eq = w.equals(p);
-        if (eq == true) {
+        for (int i = 0; i < post.length; i++) {
+            if (word[i + (word.length - post.length)] != post[i]) {
+                result = false;
+                break;
+            }
             result = true;
         }
         return result;
